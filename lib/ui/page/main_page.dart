@@ -76,6 +76,7 @@ class _MainPageState extends State<MainPage> {
   @override
   void initState() {
     checkAppUpdate(context);
+    requestPermission(context);
     super.initState();
   }
 }

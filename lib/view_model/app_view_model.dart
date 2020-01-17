@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_jroom_quality/model/app_info.dart';
+import 'package:flutter_jroom_quality/model/app_model.dart';
 import 'package:flutter_jroom_quality/provider/view_state_model.dart';
 import 'package:flutter_jroom_quality/service/base_repository.dart';
 import 'package:flutter_jroom_quality/utils/platform_utils.dart';

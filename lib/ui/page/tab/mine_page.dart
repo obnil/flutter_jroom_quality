@@ -9,9 +9,9 @@ import 'package:provider/provider.dart';
 import 'package:flutter_jroom_quality/config/resource_mananger.dart';
 import 'package:flutter_jroom_quality/config/router_manger.dart';
 import 'package:flutter_jroom_quality/provider/provider_widget.dart';
-import 'package:flutter_jroom_quality/view_model/login_model.dart';
-import 'package:flutter_jroom_quality/view_model/theme_model.dart';
-import 'package:flutter_jroom_quality/view_model/user_model.dart';
+import 'package:flutter_jroom_quality/view_model/login_view_model.dart';
+import 'package:flutter_jroom_quality/view_model/theme_view_model.dart';
+import 'package:flutter_jroom_quality/view_model/user_view_model.dart';
 
 class MinePage extends StatefulWidget {
   @override
@@ -86,10 +86,10 @@ class UserHeaderWidget extends StatelessWidget {
                               tag: 'loginLogo',
                               child: ClipOval(
                                 child: Image.asset(
-                                    ImageHelper.wrapAssets('user_avatar.png'),
+                                    ImageHelper.wrapAssets('ic_user_avatar.png'),
                                     fit: BoxFit.cover,
-                                    width: 80,
-                                    height: 80,
+                                    width: 38,
+                                    height: 38,
                                     color: model.hasUser
                                         ? Theme.of(context)
                                             .accentColor
@@ -108,7 +108,7 @@ class UserHeaderWidget extends StatelessWidget {
                           Column(children: <Widget>[
                             Text(
                                 model.hasUser
-                                    ? model.user.nickname
+                                    ? model.user.username
                                     : S.of(context).toSignIn,
                                 style: Theme.of(context)
                                     .textTheme

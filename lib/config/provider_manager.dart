@@ -1,7 +1,7 @@
-import 'package:flutter_jroom_quality/view_model/locale_model.dart';
-import 'package:flutter_jroom_quality/view_model/user_model.dart';
+import 'package:flutter_jroom_quality/view_model/locale_view_model.dart';
+import 'package:flutter_jroom_quality/view_model/user_view_model.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_jroom_quality/view_model/theme_model.dart';
+import 'package:flutter_jroom_quality/view_model/theme_view_model.dart';
 
 List<SingleChildCloneableWidget> providers = [
   ...independentServices,

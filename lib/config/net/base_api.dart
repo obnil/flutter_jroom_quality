@@ -8,11 +8,11 @@ class Http extends BaseHttp {
   @override
   void init() {
     options.baseUrl = 'https://tsapp.jiangroom.com/';
-    interceptors
-      ..add(ApiInterceptor())
-      /*// cookie持久化 异步
+    interceptors..add(ApiInterceptor())
+        /*// cookie持久化 异步
       ..add(CookieManager(
-          PersistCookieJar(dir: StorageManager.temporaryDirectory.path)))*/;
+          PersistCookieJar(dir: StorageManager.temporaryDirectory.path)))*/
+        ;
   }
 }
 
@@ -20,7 +20,8 @@ class ApiInterceptor extends InterceptorsWrapper {
   @override
   onRequest(RequestOptions options) async {
     debugPrint('---api-request--->url--> ${options.baseUrl}${options.path}' +
-        ' queryParameters: ${options.queryParameters}');
+        ' queryParameters: ${options.queryParameters}' +
+        ' data: ${options.data}');
 //    debugPrint('---api-request--->data--->${options.data}');
     return options;
   }

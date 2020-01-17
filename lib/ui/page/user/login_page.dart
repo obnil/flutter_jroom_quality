@@ -9,7 +9,7 @@ import 'package:provider/provider.dart';
 import 'package:flutter_jroom_quality/config/router_manger.dart';
 import 'package:flutter_jroom_quality/provider/provider_widget.dart';
 import 'package:flutter_jroom_quality/ui/widget/button_progress_indicator.dart';
-import 'package:flutter_jroom_quality/view_model/login_model.dart';
+import 'package:flutter_jroom_quality/view_model/login_view_model.dart';
 
 import 'package:flutter_jroom_quality/ui/page/user/login_widget.dart';
 
@@ -47,7 +47,8 @@ class _LoginPageState extends State<LoginPage> {
             child: Stack(
               children: <Widget>[
                 Container(
-                  padding: EdgeInsets.symmetric(vertical: 60,horizontal: 24),
+                  padding:
+                      EdgeInsets.only(top: 60, left: 24, right: 24, bottom: 20),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
@@ -55,10 +56,11 @@ class _LoginPageState extends State<LoginPage> {
                       Row(
                         children: <Widget>[
                           Padding(
-                            padding: const EdgeInsets.only(top: 24),
-                            child: Text(S.of(context).welcome,
-                                style: TextStyle(color: Theme.of(context).accentColor,fontSize: 24))
-                          ),
+                              padding: const EdgeInsets.only(top: 24),
+                              child: Text(S.of(context).welcome,
+                                  style: TextStyle(
+                                      color: Theme.of(context).accentColor,
+                                      fontSize: 24))),
                         ],
                       ),
                       LoginFormContainer(
@@ -130,7 +132,7 @@ class LoginButton extends StatelessWidget {
               style: Theme.of(context)
                   .accentTextTheme
                   .title
-                  .copyWith(wordSpacing: 6),
+                  .copyWith(wordSpacing: 6, fontSize: 14),
             ),
       onPressed: model.busy
           ? null
@@ -141,7 +143,8 @@ class LoginButton extends StatelessWidget {
                     .login(nameController.text, passwordController.text)
                     .then((value) {
                   if (value) {
-                    Navigator.of(context).pop(true);
+                    //Navigator.of(context).pop(true);
+                    Navigator.of(context).pushReplacementNamed(RouteName.tab);
                   } else {
                     model.showErrorMessage(context);
                   }

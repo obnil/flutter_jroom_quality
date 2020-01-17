@@ -2,7 +2,7 @@ import 'package:flutter_jroom_quality/config/storage_manager.dart';
 import 'package:flutter_jroom_quality/provider/view_state_model.dart';
 import 'package:flutter_jroom_quality/service/base_repository.dart';
 
-import 'user_model.dart';
+import 'user_view_model.dart';
 
 const String kLoginName = 'kLoginName';
 
@@ -37,7 +37,7 @@ class LoginModel extends ViewStateModel {
     }
     setBusy();
     try {
-      await BaseRepository.logout();
+      //await BaseRepository.logout();
       userModel.clearUser();
       setIdle();
       return true;

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_jroom_quality/config/resource_mananger.dart';
 import 'package:flutter_jroom_quality/config/router_manger.dart';
 import 'package:flutter_jroom_quality/generated/i18n.dart';
-import 'package:flutter_jroom_quality/view_model/user_model.dart';
+import 'package:flutter_jroom_quality/view_model/user_view_model.dart';
 import 'package:provider/provider.dart';
 
 class SplashPage extends StatefulWidget {
@@ -55,7 +55,7 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
             child: SafeArea(
               child: InkWell(
                 onTap: () {
-                  nextPage(context, !model.hasUser);
+                  nextPage(context, !model.hasUser || model.user.token.isEmpty);
                 },
                 child: Container(
                   padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
@@ -66,7 +66,7 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
                   ),
                   child: AnimatedCountdown(
                     context: context,
-                    goToLogin: !model.hasUser,
+                    goToLogin: model.user.token.isEmpty,
                     animation: StepTween(begin: 2, end: 0)
                         .animate(_countdownController),
                   ),

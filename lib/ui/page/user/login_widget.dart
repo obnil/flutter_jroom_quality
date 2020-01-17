@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_jroom_quality/config/resource_mananger.dart';
-import 'package:flutter_jroom_quality/view_model/theme_model.dart';
+import 'package:flutter_jroom_quality/view_model/theme_view_model.dart';
 
 class LoginLogo extends StatelessWidget {
   @override

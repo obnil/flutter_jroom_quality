@@ -8,7 +8,7 @@ final Http http = Http();
 class Http extends BaseHttp {
   @override
   void init() {
-    options.baseUrl = 'https://tapp.jiangroom.com/';
+    options.baseUrl = 'http://tauth.jiangroom.com/';
     interceptors.add(PgyerApiInterceptor());
   }
 }
